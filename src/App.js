@@ -18,7 +18,7 @@ const App = () => {
       id: videoData.length + 1,
       name: "Custom Video",
       url: urlInput,
-      thumbnail: "", // You can add a default thumbnail or fetch it from metadata
+      thumbnail: "custom thumbnail", 
       description: "Custom video added via URL input."
     };
     videoData.push(newVideo);
