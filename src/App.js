@@ -37,6 +37,12 @@ const App = () => {
   const handleNextVideo = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex === videoData.length - 1 ? 0 : prevIndex + 1));
   };
+ const handleRemove=(index)=>{
+  videoData.splice(index);
+    if (currentVideoIndex >= videoData.length) {
+      setCurrentVideoIndex(videoData.length - 1);
+    }
+ }
 
   return (
     <Container maxWidth="lg">
@@ -62,7 +68,7 @@ const App = () => {
           />
         </Grid>
         <Grid item xs={4}>
-          <VideoList videos={videoData} playVideo={playVideo} />
+          <VideoList videos={videoData} playVideo={playVideo} handleRemove={handleRemove}/>
         </Grid>
       </Grid>
       <div>

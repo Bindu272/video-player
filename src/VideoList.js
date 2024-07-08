@@ -1,7 +1,7 @@
 import React from "react";
 import { List, ListItem, ListItemText, ListItemIcon, Tooltip, CardMedia } from "@mui/material";
 
-const VideoList = ({ videos, playVideo }) => {
+const VideoList = ({ videos, playVideo, handleRemove }) => {
   return (
     <List>
       {videos.map((video) => (
@@ -12,6 +12,7 @@ const VideoList = ({ videos, playVideo }) => {
             </Tooltip>
           </ListItemIcon>
           <ListItemText primary={video.name} />
+          <button onClick={handleRemove}>Remove</button>
         </ListItem>
       ))}
     </List>
